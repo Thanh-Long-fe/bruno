@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+ h1 {
+  font-size: 1.875rem !important; /* 30px */
+}
+ h2 {
+  font-size: 1.5rem !important; /* 24px */
+}
+ h3 {
+  font-size: 1.25rem !important; /* 20px */
+}
+ h4 {
+  font-size: 1.125rem !important; /* 18px */
+}
