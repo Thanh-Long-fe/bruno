@@ -57,7 +57,6 @@ const AdminPage = () => {
     handleSubmit,
     reset,
     control,
-    formState: { errors },
   } = useForm<any>({ resolver: yupResolver(schema) });
 
   useEffect(() => {
