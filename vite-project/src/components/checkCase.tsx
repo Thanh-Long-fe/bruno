@@ -126,13 +126,13 @@ const CaseStatusChecker = () => {
             <div className="mt-6 text-sm">
                 <p>
                     Already have an Account?{' '}
-                    <a href="/login" className="text-blue-600 hover:underline">
+                    <a href="/" className="text-blue-600 hover:underline">
                         Login
                     </a>
                 </p>
                 <p>
                     Create an Account?{' '}
-                    <a href="/signup" className="text-blue-600 hover:underline">
+                    <a href="/" className="text-blue-600 hover:underline">
                         Sign up
                     </a>
                 </p>
