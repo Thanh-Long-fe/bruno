@@ -8,6 +8,7 @@ import 'react-quill/dist/quill.snow.css';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { createPerson, deletePerson, getPersons, updatePerson, updatePersonResult } from '../service/info';
 import PreviewResult from '../components/Preview';
+import MessagePopupButton from '../components/popup';
 
 
 export interface Person {
@@ -36,11 +37,11 @@ const schema = yup.object().shape({
 });
 
 const AdminPage = () => {
-  useEffect(() => {
-    if (!localStorage.getItem("accessToken")) {
-      window.location.href = "/login"
-    }
-  }, [])
+  // useEffect(() => {
+  //   if (!localStorage.getItem("accessToken")) {
+  //     window.location.href = "/login"
+  //   }
+  // }, [])
   const [data, setData] = useState<Person[]>([]);
   const [search, setSearch] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
@@ -159,12 +160,7 @@ const AdminPage = () => {
             onChange={(e) => setSearch(e.target.value)}
             className="border border-gray-300 rounded px-3 py-2 w-64 focus:outline-none focus:ring focus:ring-blue-200"
           />
-          <button
-            onClick={() => setSearch('')}
-            className="bg-gradient-to-r from-indigo-500 to-purple-500 text-white px-4 py-2 rounded shadow hover:from-indigo-600 hover:to-purple-600"
-          >
-            Refresh
-          </button>
+            <MessagePopupButton/>
         </div>
 
         <div className="overflow-auto bg-white rounded-xl shadow">

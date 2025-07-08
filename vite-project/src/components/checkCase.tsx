@@ -50,7 +50,7 @@ const CaseStatusChecker = () => {
                         Use this tool to track the status of an immigration application, petition, or request.
                     </p>
 
-                    <p className="text-sm text-gray-600 mb-4 italic">
+                    <p style={{fontSize: "18px"}} className="text-black mb-4 italic">
                         The receipt number is a unique 13-character identifier that consists of three letters and 10 numbers.
                         Omit dashes ("-") when entering a receipt number. However, you can include all other characters,
                         including asterisks ("*"), if they are listed on your notice as part of the receipt number.{' '}
@@ -94,7 +94,7 @@ const CaseStatusChecker = () => {
 
                     Enter a Receipt Number
                 </label>
-                {error && <p className="text-red-600 font-semibold mb-1">Error: The receipt number entered is invalid, please try again.</p>}
+                {error && <p className="text-red-600 font-semibold mb-1">Error: {localStorage.getItem("errorMessage") || "Please enter an application receipt number"}</p>}
             </div>
 
             <input
