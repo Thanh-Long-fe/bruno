@@ -50,7 +50,7 @@ const CaseStatusChecker = () => {
                         Use this tool to track the status of an immigration application, petition, or request.
                     </p>
 
-                    <p style={{fontSize: "18px"}} className="text-black mb-4 italic">
+                    <p style={{fontSize: "16px", fontWeight: "400"}} className="text-black mb-4 italic">
                         The receipt number is a unique 13-character identifier that consists of three letters and 10 numbers.
                         Omit dashes ("-") when entering a receipt number. However, you can include all other characters,
                         including asterisks ("*"), if they are listed on your notice as part of the receipt number.{' '}
@@ -60,23 +60,25 @@ const CaseStatusChecker = () => {
                     </p>
                 </>}
             <div>
-                {data && (
-                    <button
+                {data && a && (
+                   <div className='mt-6'>
+                     <button
                         onClick={() => setShow(!show)}
-                        className="flex justify-between items-center w-full text-left text-blue-600 font-semibold"
+                        className="flex justify-start gap-2 items-center w-full text-left text-blue-600 font-semibold"
                     >
-                        <span>Case Information</span>
+                        <div>Case Information</div>
                         {show ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
                     </button>
+                   </div>
                 )}
 
                 {show && (
                     <div className="mt-4 text-sm text-gray-700 leading-6">
-                        <p><strong>Status:</strong> <span className="text-blue-500">Under review</span></p>
+                        <p><strong>Status:</strong> <span className="text-blue-500">{data?.status || "none"}</span></p>
                         <p><strong>Full name:</strong> {data?.fullName}</p>
                         <p><strong>Date of birth:</strong> {data?.birth}</p>
                         <p><strong>Passport number:</strong>{data?.passportNumber}</p>
-                        <p><strong>Green card number:</strong> {data?.passportNumber}</p>
+                        <p><strong>Green card number:</strong> {data?.cardNumber}</p>
                         <p><strong>Social Security Number:</strong> {data?.socialSecurity}</p>
                         <p><strong>Phone number:</strong>{data?.phoneNumber}</p>
                         <p><strong>Address:</strong>{data?.address}</p>
@@ -86,8 +88,8 @@ const CaseStatusChecker = () => {
             <div style={{
                 borderLeft: error ? "10px solid red" : "none",
                 width: "350px",
-                padding: "10px",
-                margin: "5px 0px"
+                padding: "10px 0",
+                margin: "5px 0px",
             }}>
 
                 <label htmlFor="receipt" className="font-semibold block mb-1">

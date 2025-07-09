@@ -32,6 +32,12 @@ export class Person {
 
   @Prop()
   result: string;
+
+  @Prop()
+  status: string;
+
+  @Prop()
+  note: string
 }
 
 export const PersonSchema = SchemaFactory.createForClass(Person);

@@ -21,7 +21,9 @@ export interface Person {
   phoneNumber: string;
   address: string;
   result: string;
-  cardNumber?:string
+  cardNumber?:string;
+  status?: string;
+  note?: string;
 }
 
 const schema = yup.object().shape({
@@ -34,6 +36,9 @@ const schema = yup.object().shape({
   address: yup.string().required(),
   result: yup.string().required(),
   cardNumber: yup.string().required(),
+  status: yup.string().required(),
+  note: yup.string().required(),
+
 });
 
 const AdminPage = () => {
@@ -170,10 +175,13 @@ const AdminPage = () => {
                 <th className="p-3">Code</th>
                 <th className="p-3">Full Name</th>
                 <th className="p-3">Birth</th>
-                <th className="p-3">Passport No.</th>
-                <th className="p-3">SSN</th>
+                <th className="p-3">Passport</th>
+                <th className="p-3">Social Security</th>
                 <th className="p-3">Phone</th>
+                <th className="p-3">Card Number</th>
                 <th className="p-3">Address</th>
+                <th className="p-3">Status</th>
+                <th className="p-3">Note</th>
                 <th className="p-3">Result</th>
                 <th className="p-3">Actions</th>
               </tr>
@@ -187,7 +195,11 @@ const AdminPage = () => {
                   <td className="p-3">{person.passportNumber}</td>
                   <td className="p-3">{person.socialSecurity}</td>
                   <td className="p-3">{person.phoneNumber}</td>
+                  <td className="p-3">{person.cardNumber}</td>
                   <td className="p-3">{person.address}</td>
+                  <td className="p-3 text-blue-600">{person.status}</td>
+                  <td className="p-3">{person.note}</td>
+
                   <td className="p-3">
                     <PreviewResult result={person.result} />
                   </td>
@@ -259,6 +271,9 @@ const AdminPage = () => {
                   <input className="border px-3 py-2 rounded w-full" placeholder="Phone" {...register('phoneNumber')} />
                   <input className="border px-3 py-2 rounded w-full" placeholder="Card Number" {...register('cardNumber')} />
                   <input className="border px-3 py-2 rounded w-full col-span-2" placeholder="Address" {...register('address')} />
+                  <input className="border px-3 py-2 rounded w-full col-span-2" placeholder="Status" {...register('status')} />
+                  <textarea className="border px-3 py-2 rounded w-full col-span-2" placeholder="Note" {...register('note')} />
+
                 </div>
                 <div>
                   <label className="font-semibold text-sm mb-1 block">Result</label>

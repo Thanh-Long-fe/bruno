@@ -30,4 +30,10 @@ export class CreatePersonDto {
 
   @IsString()
   result?: string;
+
+  @IsString()
+  status?: string;
+
+  @IsString()
+  note?: string;
 }
