@@ -80,8 +80,8 @@ const CaseStatusChecker = () => {
                         <p><strong>Passport number:</strong>{data?.passportNumber}</p>
                         <p><strong>Green card number:</strong> {data?.cardNumber}</p>
                         <p><strong>Social Security Number:</strong> {data?.socialSecurity}</p>
-                        <p><strong>Phone number:</strong>{data?.phoneNumber}</p>
-                        <p><strong>Address:</strong>{data?.address}</p>
+                        <p><strong>Phone number:</strong> {data?.phoneNumber}</p>
+                        <p><strong>Address:</strong> {data?.address}</p>
                     </div>
                 )}
             </div>

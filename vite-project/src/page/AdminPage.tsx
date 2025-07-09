@@ -9,7 +9,21 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { createPerson, deletePerson, getPersons, updatePerson, updatePersonResult } from '../service/info';
 import PreviewResult from '../components/Preview';
 import MessagePopupButton from '../components/popup';
-
+const modules = {
+  toolbar: [
+    [{ 'font': [] }, { 'size': [] }],
+    [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+    ['bold', 'italic', 'underline', 'strike'],
+    [{ 'color': [] }, { 'background': [] }],
+    [{ 'script': 'sub' }, { 'script': 'super' }],
+    [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+    [{ 'indent': '-1' }, { 'indent': '+1' }],
+    [{ 'align': [] }],
+    ['blockquote', 'code-block'],
+    ['link', 'image', 'video'],
+    ['clean']
+  ],
+};
 
 export interface Person {
   _id: string;
@@ -21,7 +35,7 @@ export interface Person {
   phoneNumber: string;
   address: string;
   result: string;
-  cardNumber?:string;
+  cardNumber?: string;
   status?: string;
   note?: string;
 }
@@ -106,7 +120,7 @@ const AdminPage = () => {
       } else {
         const { _id, ...createPayload } = formData;
         await createPerson(createPayload);
-     }
+      }
       await fetchData();
       setModalOpen(false);
       setEditingPerson(null);
@@ -165,7 +179,7 @@ const AdminPage = () => {
             onChange={(e) => setSearch(e.target.value)}
             className="border border-gray-300 rounded px-3 py-2 w-64 focus:outline-none focus:ring focus:ring-blue-200"
           />
-            <MessagePopupButton/>
+          <MessagePopupButton />
         </div>
 
         <div className="overflow-auto bg-white rounded-xl shadow">
@@ -281,7 +295,8 @@ const AdminPage = () => {
                     name="result"
                     control={control}
                     render={({ field }) => (
-                      <ReactQuill theme="snow" {...field} />
+                      <ReactQuill theme="snow" {...field}
+                        modules={modules} />
                     )}
                   />
                 </div>
