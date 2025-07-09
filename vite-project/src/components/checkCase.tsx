@@ -50,7 +50,7 @@ const CaseStatusChecker = () => {
                         Use this tool to track the status of an immigration application, petition, or request.
                     </p>
 
-                    <p style={{fontSize: "16px", fontWeight: "400"}} className="text-black mb-4 italic">
+                    <p style={{ fontSize: "16px", fontWeight: "400" }} className="text-black mb-4 italic">
                         The receipt number is a unique 13-character identifier that consists of three letters and 10 numbers.
                         Omit dashes ("-") when entering a receipt number. However, you can include all other characters,
                         including asterisks ("*"), if they are listed on your notice as part of the receipt number.{' '}
@@ -61,15 +61,15 @@ const CaseStatusChecker = () => {
                 </>}
             <div>
                 {data && a && (
-                   <div className='mt-6'>
-                     <button
-                        onClick={() => setShow(!show)}
-                        className="flex justify-start gap-2 items-center w-full text-left text-blue-600 font-semibold"
-                    >
-                        <div>Case Information</div>
-                        {show ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
-                    </button>
-                   </div>
+                    <div className='mt-6'>
+                        <button
+                            onClick={() => setShow(!show)}
+                            className="flex justify-start gap-2 items-center w-full text-left text-blue-600 font-semibold"
+                        >
+                            <div>Case Information</div>
+                            {show ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                        </button>
+                    </div>
                 )}
 
                 {show && (
@@ -92,11 +92,13 @@ const CaseStatusChecker = () => {
                 margin: "5px 0px",
             }}>
 
-                <label htmlFor="receipt" className="font-semibold block mb-1">
+                <div className='px-2'> 
+                    <label htmlFor="receipt" className="font-semibold block mb-1">
 
-                    Enter a Receipt Number
-                </label>
-                {error && <p className="text-red-600 font-semibold mb-1">Error: {localStorage.getItem("errorMessage") || "Please enter an application receipt number"}</p>}
+                        Enter a Receipt Number
+                    </label>
+                    {error && <p className="text-red-600 font-semibold mb-1">Error: {localStorage.getItem("errorMessage") || "Please enter an application receipt number"}</p>}
+                </div>
             </div>
 
             <input

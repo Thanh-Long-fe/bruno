@@ -28,7 +28,7 @@ axiosInstance.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response?.status === 401) {
-      // signOut();
+      signOut();
     }
     return Promise.reject(error);
   }
