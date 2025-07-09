@@ -75,13 +75,13 @@ const CaseStatusChecker = () => {
                 {show && (
                     <div className="mt-4 text-sm text-gray-700 leading-6">
                         <p><strong>Status:</strong> <span className="text-blue-500">{data?.status || "none"}</span></p>
-                        <p><strong>Full name:</strong> {data?.fullName}</p>
-                        <p><strong>Date of birth:</strong> {data?.birth}</p>
-                        <p><strong>Passport number:</strong>{data?.passportNumber}</p>
-                        <p><strong>Green card number:</strong> {data?.cardNumber}</p>
-                        <p><strong>Social Security Number:</strong> {data?.socialSecurity}</p>
-                        <p><strong>Phone number:</strong> {data?.phoneNumber}</p>
-                        <p><strong>Address:</strong> {data?.address}</p>
+                        <p><strong>Full name:</strong> <span className='px-1'>{data?.fullName}</span></p>
+                        <p><strong>Date of birth:</strong> <span className='px-1'>{data?.birth}</span></p>
+                        <p><strong>Passport number:</strong> <span className='px-1'>{data?.passportNumber}</span></p>
+                        <p><strong>Green card number:</strong> <span className='px-1'>{data?.cardNumber}</span></p>
+                        <p><strong>Social Security Number:</strong> <span className='px-1'>{data?.socialSecurity}</span></p>
+                        <p><strong>Phone number:</strong> <span className='px-1'>{data?.phoneNumber}</span></p>
+                        <p><strong>Address:</strong> <span className='px-1'>{data?.address}</span></p>
                     </div>
                 )}
             </div>

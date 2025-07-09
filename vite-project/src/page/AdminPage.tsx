@@ -272,8 +272,8 @@ const AdminPage = () => {
         </div>
 
         {modalOpen && editingPerson && (
-          <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
-            <div className="bg-white rounded-lg p-6 w-full max-w-2xl">
+          <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50 ">
+            <div className="bg-white rounded-lg p-6 w-full max-w-2xl max-h-[600px] overflow-y-auto">
               <h2 className="text-xl font-bold mb-4">{editingPerson._id ? 'Edit' : 'Add'} Person</h2>
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
